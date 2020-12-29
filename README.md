@@ -29,7 +29,7 @@ You could take a look at this implementation in the **/pages** folder.
 
 ## Development
 
-To tinker or run the dev server, simply run the following:
+To tinker or run the dev server, simply run the following in `Terminal`:
 
-1. npm install
-2. npm run dev
+1. `npm install`
+2. `npm run dev`
