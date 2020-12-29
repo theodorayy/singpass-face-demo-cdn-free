@@ -26,3 +26,10 @@ To download the assets files, refer here for all the files. You should be able t
 Since this simple POC is using `http-server` to serve the static content, it serves through port `8080`. We've hard-coded `assets_url` to point to `assets_url="/"`.
 
 You could take a look at this implementation in the **/pages** folder.
+
+## Development
+
+To tinker or run the dev server, simply run the following:
+
+1. npm install
+2. npm run dev
