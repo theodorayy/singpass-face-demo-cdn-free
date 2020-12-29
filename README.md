@@ -1,5 +1,7 @@
 # CDN-free SingPass Face Example
 
+![NDI-api Logo](https://www.ndi-api.gov.sg/assets/img/ndi-api-logo.png)
+
 ## Instructions
 
 1. Download this repo
@@ -33,3 +35,11 @@ To tinker or run the dev server, simply run the following in `Terminal`:
 
 1. `npm install`
 2. `npm run dev`
+
+## Support/Queries
+
+Please contact biometrics_support@ndi.gov.sg if you have any queries.
+
+## Acknowledgements
+
+[iProov Web SDK Documentation](https://github.com/iProov/web)
