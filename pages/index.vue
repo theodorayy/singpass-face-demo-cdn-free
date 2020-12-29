@@ -66,7 +66,7 @@
                                     <iproov-me :token="token" v-if="validated" 
                                     base_url="https://stg-bio-stream.singpass.gov.sg"
                                     logo="https://www.ndi-api.gov.sg/assets/img/ndi-api-logo.png" ref="iproov"
-                                    assets_url="http://localhost:8080"
+                                    assets_url="/"
                                     >
                                         <!-- Custom slots go in here -->
                                         <!-- <div id="sp-face-slots"> -->
@@ -201,9 +201,9 @@ export default {
         this.notice = "You need to verify before proceeding with the transfer."
         this.alerts("You're about to transfer more than your daily limit. Verification is needed.", "is-danger", 5000)
 
+        require("@iproov/web")
         if (process.client) {
             // include iproov library
-            window.some_lib = require("@iproov/web")
             
             window.iProovEvent = event => {
 
