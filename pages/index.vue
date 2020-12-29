@@ -96,7 +96,7 @@
                                                 <b-button class="is-primary">Scan my face</b-button>
                                             </div>
                                             <!-- User aborted the verification process -->
-                                            <div slot="aborted" class="m-1">
+                                            <div slot="cancelled" class="m-1">
                                                 <p class="has-text-grey-dark">If you'd like to try again, please click the button below.<br></p>
                                             </div>
                                             <!-- Verification is sent to the server and is processing -->
