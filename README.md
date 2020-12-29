@@ -4,7 +4,7 @@
 
 1. Download this repo
 2. On macOS, install npm first if it's not installed.
-3. Then, run run.sh
+3. Then, run `run.sh` in Terminal. It will run a `http-server` package using `npx`.
 
 ## Source Code
 
