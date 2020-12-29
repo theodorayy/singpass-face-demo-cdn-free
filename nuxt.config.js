@@ -58,7 +58,7 @@ export default {
     // proxyHeaders: false,
     // baseURL: '/api', // For use in Production
     // baseURL: "http://localhost:9000", // For use in Dev
-    baseURL: 'https://www.identiface.live/api'
+    baseURL: 'https://developer.bio-api.singpass.gov.sg/api'
   },
   /*
   ** Build configuration
