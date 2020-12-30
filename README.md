@@ -1,4 +1,4 @@
-# CDN-free SingPass Face Example
+# CDN-free SingPass Face Example for HTML5
 
 ![NDI-api Logo](https://www.ndi-api.gov.sg/assets/img/ndi-api-logo.png)
 
@@ -20,7 +20,7 @@ We have a QuickStart backend portal where your frontend (this POC) code can call
 
 The assets source at https://cdn.iproov.app/ – where the typography, verification engine, and other files are stored in a CDN.
 
-To download the assets files, refer here for all the files. You should be able to download the package from there. Here are the next steps on what you need to do:
+To download the assets files, refer to [iProov's npm package](https://www.jsdelivr.com/package/npm/@iproov/web) for all the files. You should be able to download the package from there. Here are the next steps on what you need to do:
 
 1. Unzip the package
 2. Copy the **iproov-assets** folder into **/dist**
