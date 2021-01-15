@@ -4,6 +4,8 @@
 
 ## Instructions
 
+> Note: Current version of iProov is 3.1.3 as at 15 January 2021. If the version has changed, simply run `npm upgrade` on the root folder.
+
 1. Download this repo
 2. On macOS, install npm first if it's not installed.
 3. Then, run `run.sh` in Terminal. It will run a `http-server` package using `npx`.
