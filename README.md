@@ -14,7 +14,16 @@
 
 ### dist folder 
 
-**/dist** contains the build files for a static Vue.js SPA using the Nuxt framework. It also contains the offline build for iProov dependencies.
+**/dist** contains the build files for a static Vue.js SPA using the Nuxt framework. It also contains the offline build for iProov dependencies. 
+
+The nuxt dependencies of ```code-prettify``` and ```materialdesignicons.min.css``` had been updated to read from local directory instead of cdn.
+
+To download the code-prettify, refer to [code-prettify npm package](https://www.jsdelivr.com/package/npm/code-prettify) for all the files. You should be able to download the package from there. Here are the next steps on what you need to do:
+
+1. Unzip the package
+2. Copy the **code-prettify** folder into **/dist**
+
+To download the materialdesignicons.min.css, refer to [materialdesignicons cdn](http://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css). Create a ```blank materialdesignicons.min.css``` file and copy the content into it. 
 
 ## How it works
 
@@ -30,6 +39,7 @@ To download the assets files, refer to [iProov's npm package](https://www.jsdeli
 Since this simple POC is using `http-server` to serve the static content, it serves through port `8080`. We've hard-coded `assets_url` to point to `assets_url="/"`.
 
 You could take a look at this implementation in the **/pages** folder.
+
 
 ## Development
 
