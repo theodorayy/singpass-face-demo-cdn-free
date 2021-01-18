@@ -65,7 +65,6 @@
                                     <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
                                     <iproov-me :token="token" v-if="validated" 
                                     base_url="https://stg-bio-stream.singpass.gov.sg"
-                                    logo="https://www.ndi-api.gov.sg/assets/img/ndi-api-logo.png" ref="iproov"
                                     assets_url="/"
                                     >
                                         <!-- Custom slots go in here -->
