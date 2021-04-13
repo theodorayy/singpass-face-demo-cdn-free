@@ -64,6 +64,7 @@
                                     <!-- SPFace Component -->
                                     <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
                                     <iproov-me :token="token" v-if="validated" 
+                                    custom_title=""
                                     base_url="https://stg-bio-stream.singpass.gov.sg"
                                     assets_url="/"
                                     >
