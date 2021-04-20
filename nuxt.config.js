@@ -23,7 +23,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+        // Link to the staging environment of spface.js
+        { src: 'https://stg-bio-face.s3-ap-southeast-1.amazonaws.com/html5sdk/spface-v3.1.6.js'},
+    ],
   },
   /*
   ** Global CSS
