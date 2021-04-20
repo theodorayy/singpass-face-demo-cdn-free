@@ -392,27 +392,6 @@ export default {
                 }
             })
         },
-        // Loading notification
-        // openLoading() {
-        //     this.isLoading = true
-        //     setTimeout(() => {
-        //         this.isLoading = false
-
-        //         const iProovMe = this.$el.querySelector("iproov-me")
-        //         iProovMe.addEventListener("ready", iProovEvent)
-        //         iProovMe.addEventListener("started", iProovEvent)
-        //         iProovMe.addEventListener("aborted", iProovEvent)
-        //         iProovMe.addEventListener("streamed", iProovEvent)
-        //         iProovMe.addEventListener("progress", iProovEvent)
-        //         iProovMe.addEventListener("passed", iProovEvent)
-        //         iProovMe.addEventListener("failed", iProovEvent)
-        //         iProovMe.addEventListener("error", iProovEvent)
-        //         iProovMe.addEventListener("unsupported", iProovEvent)
-        //         iProovMe.addEventListener("permission", iProovEvent)
-        //         iProovMe.addEventListener("permission_denied", iProovEvent)
-
-        //     }, 0.5 * 1000)
-        // },
         openLoading() {
             this.isLoading = true
             setTimeout(() => {
