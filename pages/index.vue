@@ -64,8 +64,12 @@
                                     <!-- SPFace Component -->
                                     <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <sp-face :token="token" v-if="validated" 
                                     custom_title=""
+=======
+                                    <iproov-me :token="token" v-if="validated" 
+>>>>>>> parent of 3b1056ee (Update dist file)
 =======
                                     <iproov-me :token="token" v-if="validated" 
 >>>>>>> parent of 3b1056ee (Update dist file)
