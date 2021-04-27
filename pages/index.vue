@@ -69,6 +69,7 @@
                                     <sp-face :token="token" v-if="validated" 
 =======
                                     <iproov-me :token="token" v-if="validated" 
+<<<<<<< HEAD
 >>>>>>> parent of 3d841515 (Update: Integrate with spface.js)
                                     custom_title=""
 =======
@@ -76,6 +77,8 @@
 >>>>>>> parent of 3b1056ee (Update dist file)
 =======
                                     <iproov-me :token="token" v-if="validated" 
+>>>>>>> parent of 3b1056ee (Update dist file)
+=======
 >>>>>>> parent of 3b1056ee (Update dist file)
                                     base_url="https://stg-bio-stream.singpass.gov.sg"
                                     assets_url="/"
