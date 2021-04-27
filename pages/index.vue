@@ -65,7 +65,11 @@
                                     <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <sp-face :token="token" v-if="validated" 
+=======
+                                    <iproov-me :token="token" v-if="validated" 
+>>>>>>> parent of 3d841515 (Update: Integrate with spface.js)
                                     custom_title=""
 =======
                                     <iproov-me :token="token" v-if="validated" 
@@ -79,8 +83,6 @@
                                         <!-- Custom slots go in here -->
                                         <!-- <div id="sp-face-slots"> -->
                                             <!-- No Camera -->
-                                            <div id="sp-face-slots">
-                                            <!-- No Camera -->
                                             <div slot="no_camera" class="m-1">
                                                 <p class="has-text-danger">You don't have a camera on your device.<br></p>
                                             </div>
@@ -89,20 +91,24 @@
                                             <div slot="grant_permission" class="m-1">
                                                 <p class="has-text-grey-dark">Before we proceed, please allow us to access your camera.<br></p>
                                             </div>
-                                        
+                                            <div slot="grant_button" class="m-1">
+                                                <b-button class="is-warning">Allow camera access</b-button><br><br>
+                                                <!-- Let the user verify their identity in another method -->
+                                                <a class="has-text-grey" href="/"><u>Use another way to verify my identity</u></a>
+                                            </div>
                                             <!-- Permissions denied -->
-                                            <!-- <div slot="permission_denied" class="m-1">
+                                            <div slot="permission_denied" class="m-1">
                                                 <p class="has-text-danger">You've denied permissions. If you would like to continue with the verification, please refresh the page.<br></p>
-                                            </div> -->
+                                            </div>
                                             <!-- UI has access to camera and is ready to begin verification -->
                                             <div slot="ready" class="m-1">
-                                                <p class="has-text-grey-dark">By selecting "Begin Scan", you are allowing us to retrieve your data on the <a href="https://www.singpass.gov.sg/singpass/common/termsofuse">Terms of Use</a><br></p>
+                                                <p class="has-text-grey-dark">Thank you. Please proceed to verify your identity.<br></p>
                                             </div>
                                             <div slot="button" class="m-1">
-                                                <b-button class="is-primary">Begin Scan</b-button>
+                                                <b-button class="is-primary">Scan my face</b-button>
                                             </div>
                                             <!-- User aborted the verification process -->
-                                            <div slot="interrupted" class="m-1">
+                                            <div slot="cancelled" class="m-1">
                                                 <p class="has-text-grey-dark">If you'd like to try again, please click the button below.<br></p>
                                             </div>
                                             <!-- Verification is sent to the server and is processing -->
@@ -123,10 +129,10 @@
                                             <!-- Errors -->
                                             <div slot="error" class="m-1">
                                                 <p class="has-text-grey-dark">Oh no, something went wrong. Please try again.<br></p>
-                                                <a class="button is-warning" href="/sample-app/transactions">Retry</a>
+                                                <a class="button is-warning" href="/">Retry</a>
                                             </div>
-                                        </div>
-                                    </sp-face>
+                                        <!-- </div> -->
+                                    </iproov-me>
                                 </div>
                             </div>
                         </div>
@@ -203,8 +209,15 @@ export default {
     mounted() {
         // Mounted is part of a lifecycle hook in VueJS. Once the DOM is ready, you can specify which functions to be run here.
         // This web app will retrieve the OAuth access token first on page serve
-        if (process.client) { 
-            window.SpfaceEvent = event => {
+        this.token = ""
+        this.notice = "You need to verify before proceeding with the transfer."
+        this.alerts("You're about to transfer more than your daily limit. Verification is needed.", "is-danger", 5000)
+
+        require("@iproov/web")
+        if (process.client) {
+            // include iproov library
+            
+            window.iProovEvent = event => {
 
                 var x = document.getElementsByTagName("PROGRESS")
 
@@ -227,12 +240,12 @@ export default {
                     case "unsupported":
                         this.alerts("Not supported!", "is-danger", 5000)
                         break
-                    // case "permission":
-                    //     this.alerts("Please enable permissions to continue", "is-info", 3000)
-                    //     break
-                    // case "permission_denied":
-                    //     this.alerts("You need to enable camera permissions to continue", "is-warning", 3000)
-                    //     break
+                    case "permission":
+                        this.alerts("Please enable permissions to continue", "is-info", 3000)
+                        break
+                    case "permission_denied":
+                        this.alerts("You need to enable camera permissions to continue", "is-warning", 3000)
+                        break
                     case "progress":
                         x[0].style.visibility = "visible"
 
@@ -255,9 +268,7 @@ export default {
                     case "feedback":
                         this.alerts(event.detail.reason, "is-info", 5000)
                     default:
-                        // console.log("sp-face" + event.detail.type + " " + event.type)
-                        // document.getElementById("allowedcam").click()
-                        // document.getElementById('allowedcam').style.visibility = 'hidden';
+                        console.log("sp-face" + event.detail.type + " " + event.type)
                 }
             }
         }
@@ -400,12 +411,29 @@ export default {
                 }
             })
         },
+<<<<<<< HEAD
+=======
+        // Loading notification
+>>>>>>> parent of 3d841515 (Update: Integrate with spface.js)
         openLoading() {
             this.isLoading = true
             setTimeout(() => {
                 this.isLoading = false
-            }, 0.5 * 1000)
 
+                const iProovMe = this.$el.querySelector("iproov-me")
+                iProovMe.addEventListener("ready", iProovEvent)
+                iProovMe.addEventListener("started", iProovEvent)
+                iProovMe.addEventListener("aborted", iProovEvent)
+                iProovMe.addEventListener("streamed", iProovEvent)
+                iProovMe.addEventListener("progress", iProovEvent)
+                iProovMe.addEventListener("passed", iProovEvent)
+                iProovMe.addEventListener("failed", iProovEvent)
+                iProovMe.addEventListener("error", iProovEvent)
+                iProovMe.addEventListener("unsupported", iProovEvent)
+                iProovMe.addEventListener("permission", iProovEvent)
+                iProovMe.addEventListener("permission_denied", iProovEvent)
+
+            }, 0.5 * 1000)
         },
     },
     
